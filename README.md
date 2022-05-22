@@ -44,7 +44,8 @@ exclude such line from the code).
 
 ***
 
-### Note about database:
+### Details about database
+
 * Use can use any relational database. 
 * The database contains three tables: 
 `users (id, login)`
