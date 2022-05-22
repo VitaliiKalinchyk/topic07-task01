@@ -1,64 +1,54 @@
-В качестве базы данных использовать реляционную БД.
+# JDBC create/read operations
+ 
+The purpose of this exercise is to train you to work with JDBC API.
+Estimated workload is *50 min*.
 
-БД содержит три таблицы:
+## Description
 
+Please, proceed to `Demo` class and analyze its content. It demonstrates the functionality of types you should implement. All types are described below.
+
+> Don't change the content of `Demo` class.
+
+Proceed to `User` class and implement its methods:
+* `getLogin()` returns the user's login;
+* `toString()` returns the users's login;
+* `equals(Object)` works as follow: two User objects are equaled if and only if they both have the same login.
+* `static void createUser(String login)` creates a new `User` object by its *login* and *id* = 0.
+
+Proceed to `Team` class and implement its methods:
+* `getName()` returns the team's name;
+* `toString()` returns the team's name;
+* `equals(Object)` works as follow: two Team objects are equaled if and only if they both have the same name;
+* `static void createTeam(String name)` creates a new `Team` object by its *name* and *id* = 0.
+
+Proceed to `DBManager` class and implement its methods:
+* `static DBManager getInstance()` returns the only one instance of this `singleton` class;
+* `List<User> findAllUsers` returns a list of all users;
+* `insertTeam(Team)` inserts a `team` into the `teams` table; this method modifies the id of a `team`, if a `team` has been inserted;
+* `List<Team> findAllTeams` returns a list of all teams.
+
+### Details
+
+Receive a connection using the following method:
+`DriverManager.getConnection(CONNECTION_URL)`
+`CONNECTION_URL` is a connection string that includes *login* and *password* of a user.
+
+You must read a connection string from the properties file `app.properties` using the key `connection.url`. The file should be located at the root of the project. An example of the `app.properties` file content:
 ```
-users (id, login)
-teams (id, name)
-users_teams (user_id, team_id)
+connection.url = jdbc:mysql://localhost:3306/mydb?user=user&password=pswrd
 ```
 
-Изначально таблицы БД должны иметь некоторое наполнение (см. код класса Demo).
+> Do not load the driver class manually (referred to a call to 
+`Class.forName (JDBC-DRIVER-FQN)`
+exclude such line from the code).
 
-В корне создать каталог sql и сохранить в нем скрипт создания базы данных `db-create.sql`
+***
 
-Создать и реализовать типы таким образом, чтобы при запуске класса Demo отрабатывала соответствующая функциональность.
-
-Пакет: `com.epam.rd.java.basic.topic07.task01`
-
-Классы:
-Demo - содержит демонстрацию функционала, оставить без изменений.
-Остальные классы см. репозиторий.
-
-Содержимое класса Demo:
-```
-public class Demo {
-
-	public static void main(String[] args) throws DBException {
-		// users  ==> [ivanov]
-		// teams  ==> [teamA]
-		DBManager dbManager = DBManager.getInstance();
-
-		dbManager.insertUser(User.createUser("petrov"));
-		dbManager.insertUser(User.createUser("obama"));
-		System.out.println(dbManager.findAllUsers());
-		// users  ==> [ivanov, petrov, obama]
-
-		dbManager.insertTeam(Team.createTeam("teamB"));
-		dbManager.insertTeam(Team.createTeam("teamC"));
-		System.out.println(dbManager.findAllTeams());
-		// teams ==> [teamA, teamB, teamC]
-	}
-}
-```
-(1) Метод DBManager#`insertUser` должен модифицировать поле id объекта User.
-
-(2) Метод DBManager#`findAllUsers` возвращает объект `java.util.List<User>`.
-
-(3) Метод DBManager#`insertTeam` должен модифицировать поле id объекта Team.
-
-(4) Метод DBManager#`findAllTeams` возвращает объект `java.util.List<Team>`.
-
-##### Замечание.
-
-Класс User должен содержать:
-- метод `getLogin()`, который возвращает логин пользователя;
-- метод `toString()`, который возвращает логин пользователя;
-- реализацию метода `equals(Object obj)`, согласно которой два объекта User равны тогда и только тогда, когда они имеют один логин;
-- статический метод `createUser(String login)`, который создает объект User по логину (идентификатор равен 0).
-
-Класс Team должен содержать:
-- метод `getName()`, который возвращает название группы;
-- метод `toString()`, который возвращает название группы;
-- реализацию метода `equals(Object obj)`, согласно которой два объекта Team равны тогда и только тогда, когда они имеют одно название.
-- статический метод `createTeam(String name)`, который создает объект Team по имени (идентификатор равен 0).
+### Note about database:
+* Use can use any relational database.  
+* The database contains three tables: 
+`users (id, login)`
+`teams (id, name)`
+`users_teams (user_id, team_id)`
+* Initially, the database tables should have a some content (see a source code of the Demo class).
+* Create an `sql` directory at the root and save the database creation script in it (`db-create.sql`).
