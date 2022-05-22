@@ -10,15 +10,15 @@ Please, proceed to `Demo` class and analyze its content. It demonstrates the fun
 > Don't change the content of `Demo` class.
 
 Proceed to `User` class and implement its methods:
-* `getLogin()` returns the user's login;
-* `toString()` returns the users's login;
-* `equals(Object)` works as follow: two User objects are equaled if and only if they both have the same login.
+* `String getLogin()` returns the user's login;
+* `String toString()` returns the users's login;
+* `boolean equals(Object)` works as follow: two User objects are equaled if and only if they both have the same login.
 * `static void createUser(String login)` creates a new `User` object by its *login* and *id* = 0.
 
 Proceed to `Team` class and implement its methods:
-* `getName()` returns the team's name;
-* `toString()` returns the team's name;
-* `equals(Object)` works as follow: two Team objects are equaled if and only if they both have the same name;
+* `String getName()` returns the team's name;
+* `String toString()` returns the team's name;
+* `boolean equals(Object)` works as follow: two Team objects are equaled if and only if they both have the same name;
 * `static void createTeam(String name)` creates a new `Team` object by its *name* and *id* = 0.
 
 Proceed to `DBManager` class and implement its methods:
@@ -45,7 +45,7 @@ exclude such line from the code).
 ***
 
 ### Note about database:
-* Use can use any relational database.  
+* Use can use any relational database. 
 * The database contains three tables: 
 `users (id, login)`
 `teams (id, name)`
