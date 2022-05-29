@@ -1,7 +1,7 @@
 # JDBC create/read operations
  
-The purpose of this exercise is to train you to work with JDBC API.  
-Estimated workload is *50 min*.
+The purpose of this exercise is to train you to work with the JDBC API.  
+The estimated workload is *50 min*.
 
 ## Description
 
@@ -44,13 +44,13 @@ connection.url = jdbc:mysql://localhost:3306/mydb?user=user&password=pswrd
 
 > Do not load the driver class manually (referred to a call to 
 `Class.forName (JDBC-DRIVER-FQN)`
-exclude such line from the code).
+exclude that line from the code).
 
 ***
 
-### Details about database
+### Details about the database
 
-* Use can use any relational database. 
+* You can use any relational database. 
 
 * The database contains three tables: 
 `users (id, login)`
