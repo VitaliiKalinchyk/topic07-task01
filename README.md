@@ -11,17 +11,10 @@ Please, proceed to `Demo` class and analyze its content. It demonstrates the fun
 
 Proceed to `User` class and implement its methods:
 
-* `String getLogin()`  
-returns the user's login;
-
-* `String toString()`  
-returns the users's login;
-
-* `boolean equals(Object)`  
-works as follow: two User objects are equaled if and only if they both have the same login.
-
-* `static void createUser(String login)`  
-creates a new `User` object by its *login* and *id* = 0.
+* `String getLogin()` returns the user's login;
+* `String toString()` returns the users's login;
+* `boolean equals(Object)` works as follow: two User objects are equaled if and only if they both have the same login.
+* `static void createUser(String login)` creates a new `User` object by its *login* and *id* = 0.
 
 Proceed to `Team` class and implement its methods:
 
@@ -40,7 +33,8 @@ Proceed to `DBManager` class and implement its methods:
 ### Details
 
 Receive a connection using the following method:
-`DriverManager.getConnection(CONNECTION_URL)`
+
+`DriverManager.getConnection(CONNECTION_URL)`  
 `CONNECTION_URL` is a connection string that includes *login* and *password* of a user.
 
 You must read a connection string from the properties file `app.properties` using the key `connection.url`. The file should be located at the root of the project. An example of the `app.properties` file content:
@@ -57,9 +51,12 @@ exclude such line from the code).
 ### Details about database
 
 * Use can use any relational database. 
+
 * The database contains three tables: 
 `users (id, login)`
 `teams (id, name)`
 `users_teams (user_id, team_id)`
+
 * Initially, the database tables should have a some content (see a source code of the Demo class).
+
 * Create an `sql` directory at the root and save the database creation script in it (`db-create.sql`).
