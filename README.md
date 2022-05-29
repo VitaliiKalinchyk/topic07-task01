@@ -42,9 +42,7 @@ You must read a connection string from the properties file `app.properties` usin
 connection.url = jdbc:mysql://localhost:3306/mydb?user=user&password=pswrd
 ```
 
-> Do not load the driver class manually (referred to a call to 
-`Class.forName (JDBC-DRIVER-FQN)`
-exclude that line from the code).
+> Do not load the driver class manually (referred to a call to `Class.forName(JDBC-DRIVER-FQN)` exclude that line from the code).
 
 ***
 
@@ -52,10 +50,10 @@ exclude that line from the code).
 
 * You can use any relational database. 
 
-* The database contains three tables: 
-`users (id, login)`
-`teams (id, name)`
-`users_teams (user_id, team_id)`
+* The database contains three tables:  
+`users (id, login)`  
+`teams (id, name)`  
+`users_teams (user_id, team_id)`  
 
 * Initially, the database tables should have a some content (see a source code of the Demo class).
 
