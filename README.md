@@ -14,14 +14,14 @@ Proceed to `User` class and implement its methods:
 * `String getLogin()` returns the user's login;
 * `String toString()` returns the users's login;
 * `boolean equals(Object)` works as follow: two User objects are equaled if and only if they both have the same login.
-* `static void createUser(String login)` creates a new `User` object by its *login* and *id* = 0.
+* `static User createUser(String login)` creates a new `User` object by its *login* and *id* = 0.
 
 Proceed to `Team` class and implement its methods:
 
 * `String getName()` returns the team's name;
 * `String toString()` returns the team's name;
 * `boolean equals(Object)` works as follow: two Team objects are equaled if and only if they both have the same name;
-* `static void createTeam(String name)` creates a new `Team` object by its *name* and *id* = 0.
+* `static Team createTeam(String name)` creates a new `Team` object by its *name* and *id* = 0.
 
 Proceed to `DBManager` class and implement its methods:
 
