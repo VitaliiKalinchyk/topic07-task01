@@ -4,12 +4,26 @@ import java.util.Objects;
 
 public class Team {
 
-	private final int id = 0;
+	private int id;
 		
 	private final String name;
 
-	private Team(String name) {
+
+	private Team(int id, String name) {
+		this.id = id;
 		this.name = name;
+	}
+
+	public static Team createTeam(String name) {
+		return new Team(0, name);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -27,9 +41,5 @@ public class Team {
 		if (o == null || getClass() != o.getClass()) return false;
 		Team team = (Team) o;
 		return Objects.equals(name, team.name);
-	}
-
-	public static Team createTeam(String name) {
-		return new Team(name);
 	}
 }

@@ -1,15 +1,26 @@
 package com.epam.rd.java.basic.topic07.task01.db.entity;
 
-import java.util.Objects;
-
 public class User {
 
-	private final int id = 0;
+	private int id;
 
 	private final String login;
 
-	public User(String login) {
+	private User(int id, String login) {
+		this.id = id;
 		this.login = login;
+	}
+
+	public static User createUser(String login) {
+		return new User(0, login);
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getLogin() {
@@ -26,10 +37,6 @@ public class User {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		User user = (User) o;
-		return Objects.equals(login, user.login);
-	}
-
-	public static User createUser(String login) {
-		return new User(login);
+		return login.equals(user.login);
 	}
 }
