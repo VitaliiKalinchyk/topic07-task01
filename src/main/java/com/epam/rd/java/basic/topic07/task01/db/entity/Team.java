@@ -1,21 +1,17 @@
 package com.epam.rd.java.basic.topic07.task01.db.entity;
 
-import java.util.Objects;
-
 public class Team {
 
 	private int id;
-		
-	private final String name;
+	private String name;
 
 
-	private Team(int id, String name) {
-		this.id = id;
+	private Team(String name) {
 		this.name = name;
 	}
 
 	public static Team createTeam(String name) {
-		return new Team(0, name);
+		return new Team(name);
 	}
 
 	public int getId() {
@@ -30,6 +26,10 @@ public class Team {
 		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	@Override
 	public String toString() {
 		return name;
@@ -40,6 +40,6 @@ public class Team {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Team team = (Team) o;
-		return Objects.equals(name, team.name);
+		return name.equals(team.name);
 	}
 }

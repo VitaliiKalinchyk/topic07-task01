@@ -6,13 +6,12 @@ public class User {
 
 	private final String login;
 
-	private User(int id, String login) {
-		this.id = id;
+	private User(String login) {
 		this.login = login;
 	}
 
 	public static User createUser(String login) {
-		return new User(0, login);
+		return new User(login);
 	}
 
 	public int getId() {

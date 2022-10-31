@@ -9,5 +9,4 @@ public class Fields {
 	public static final String TEAM_ID = "id";
 
 	public static final String TEAM_NAME = "name";
-
 }
